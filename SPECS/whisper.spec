@@ -48,7 +48,7 @@ rm -rf %{buildroot}
 %defattr(-,root,root)
 %{_bindir}/rrd2whisper.py
 %{_bindir}/whisper*.py
-%{python_sitelib}/%{name}-%{version}-py%{pyver}.egg-info
+%{python_sitelib}/%{name}-%{version}-py%{python_version}.egg-info
 %{python_sitelib}/%{name}.py
 %{python_sitelib}/%{name}.pyc
 %{python_sitelib}/%{name}.pyo
