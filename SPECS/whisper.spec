@@ -7,7 +7,7 @@
 Summary:       Fixed size round-robin style database
 Name:          whisper
 Version:       0.9.10
-Release:       1%{?dist}
+Release:       2%{?dist}
 Source:        https://launchpad.net/graphite/0.9/%{version}/%{name}-%{version}.tar.gz
 License:       Apache Software License 2.0
 Group:         Development/Libraries
@@ -35,7 +35,7 @@ Fixed size round-robin style database
 
 %install
 rm -rf %{buildroot}
-%{__python} setup.py install --root=%{buildroot}
+%{__python} setup.py install --root=%{buildroot} -O1
 
 install -d -m 0755 %{buildroot}%{_sharedstatedir}/graphite/storage/whisper
 
@@ -55,6 +55,9 @@ rm -rf %{buildroot}
 %attr(0755,graphite,graphite) %{_sharedstatedir}/graphite/
 
 %changelog
+* Fri Aug 24 2012 Jason Antman <jason@jasonantman.com> - 0.9.10-2
+- Fix issue with missing .pyo files on Cent6.2
+
 * Tue Jul 10 2012 Jeff Goldschrafe <jeff@holyhandgrenade.org> - 0.9.10-1
 - Update to version 0.9.10
 
